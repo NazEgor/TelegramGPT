@@ -117,7 +117,7 @@ def main():
             markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
             markup.add(button_generate("text"), button_generate("image"), button_generate("help"))
             messages.restart()
-            bot.send_message(new_message.chat.id,f"Здравствуйте, <b>{new_message.from_user.first_name}</b>, я бот-помощник, можете задавать мне вопросы, и я буду подбирать для вас ответ с помощью нейросети.\n<b>Команды</b>:\n\t/text - задать вопрос боту (режим общения),\n\t/end - выйти из решима общения,\n\t/image - сгенерировать картинку по запросу,\n\t/help - узнать больше о боте.\n\t<b>Также для удобства созданы кнопки.</b>", parse_mode="html", reply_markup=markup)
+            bot.send_message(new_message.chat.id,f"Здравствуйте, <b>{new_message.from_user.first_name}</b>, я бот-помощник, можете задавать мне вопросы, и я буду подбирать для вас ответ с помощью нейросети.\n<b>Команды</b>:\n\t/text - задать вопрос боту (режим общения),\n\t/end - выйти из режима общения,\n\t/image - сгенерировать картинку по запросу,\n\t/help - узнать больше о боте.\n\t<b>Также для удобства созданы кнопки.</b>", parse_mode="html", reply_markup=markup)
 
 
         @bot.message_handler(commands=['text'])
@@ -144,7 +144,7 @@ def main():
             messages.restart()
             messages.image_flag = True
             bot.send_message(new_message.chat.id,
-                         "Можете задавать название для генерации картинки. (Для завершения функции напишите /end или кнопку 'Завершить')",
+                         "Можете задавать название для генерации картинки. (Для завершения функции напишите /end или нажмите кнопку 'Завершить')",
                          parse_mode="html", reply_markup=markup)
 
 
